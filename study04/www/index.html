@@ -33,9 +33,9 @@
     document.getElementsByClassName("board")[0].innerHTML = html;
     }
     function fn_event(target){
-      fetch('data1.json')
+      fetch(`http://127.0.0.1:8000/data?target=${target}`)
       .then(x => x.json())
-      .then(data => fn_view(data[target]))
+      .then(res => fn_view(res.data));
   }
   </script>
 </head>
