@@ -25,20 +25,17 @@
     .bg {background-color: #DEB887;}
   </style>
   <script>
-    function fn_event(){
-    const arr = [
-      1,0,0,0,0,
-      1,1,0,0,0,
-      1,1,1,0,0,
-      1,1,1,1,0,
-      1,1,1,1,1
-    ];
-
-    let html =""
-    for(const v of arr){
-      html += `<div class="cell ${v === 1 ?'bg': ''}"></div>`
-    }
+    function fn_view(arr){
+      let html =""
+        for(const v of arr){
+          html += `<div class="cell ${v === 1 ?'bg': ''}"></div>`
+      }
     document.getElementsByClassName("board")[0].innerHTML = html;
+    }
+    function fn_event(target){
+      fetch('data1.json')
+      .then(x => x.json())
+      .then(data => fn_view(data[target]))
   }
   </script>
 </head>
