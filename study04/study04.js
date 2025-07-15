@@ -5,7 +5,7 @@ for (let y=0 ;y < a.length; y++){
     let l = "";
     for(let x=0; x<a.length; x++){
         //l += a[x]
-        if( x>=y ){
+        if( x > y ){
             l +="0";
         }else{
             l +="1";

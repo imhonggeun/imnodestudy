@@ -24,38 +24,27 @@
     .cell:hover {border: 1px solid #ff00ff; cursor: pointer;}
     .bg {background-color: #DEB887;}
   </style>
+  <script>
+    function fn_event(){
+    const arr = [
+      1,0,0,0,0,
+      1,1,0,0,0,
+      1,1,1,0,0,
+      1,1,1,1,0,
+      1,1,1,1,1
+    ];
+
+    let html =""
+    for(const v of arr){
+      html += `<div class="cell ${v === 1 ?'bg': ''}"></div>`
+    }
+    document.getElementsByClassName("board")[0].innerHTML = html;
+  }
+  </script>
 </head>
+<!-- onload="fn_event()" -->
 <body>
   <div class="board">
-    <div class="cell bg"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell"></div>
-
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
-    <div class="cell bg"></div>
   </div>
 </body>
 </html>
