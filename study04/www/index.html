@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>빈칸 채우기</title>
+  <style>
+    * {box-sizing: border-box;}
+    html, body {margin: 0; padding: 0; background-color: beige;}
+    body {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .board {
+      display: grid;
+      width: calc(30px * 5);
+      grid-template-columns: repeat(5, 30px);
+      grid-template-rows: repeat(5, 30px);
+      border: 1px solid #000;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .cell {border: 1px solid #000;}
+    .cell:hover {border: 1px solid #ff00ff; cursor: pointer;}
+    .bg {background-color: #DEB887;}
+  </style>
+</head>
+<body>
+  <div class="board">
+    <div class="cell bg"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell"></div>
+
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+    <div class="cell bg"></div>
+  </div>
+</body>
+</html>
