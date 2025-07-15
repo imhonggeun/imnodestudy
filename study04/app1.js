@@ -12,3 +12,4 @@ for(let i in a){
 for(let i of a){
     console.log(i)
 }
+
