@@ -87,35 +87,32 @@ for (let i = 0; i < btns.length; i++) {
 
 // 키보드 이벤트 설정
 window.onkeydown = function(e) {
+    if (target === "") return; // 아무 모델도 선택하지 않았다면 무시
+
+    const data = model[target];
+    let [y, x] = point;
+
     switch (e.keyCode) {
-        case 37: // 왼쪽 이동
-            if(point[1] - 1 >= start) {
-                point = [point[0], point[1] - 1];
-            } else {
-                point = [point[0], end];
-            }
+        case 37: { // 왼쪽
+            const newX = (x - 1 >= start) ? x - 1 : end;
+            if (data[y][newX] !== 1) point = [y, newX];
             break;
-        case 38 : // 위쪽 이동
-            if(point[0] - 1 >= start) {
-                point = [point[0] - 1, point[1]];
-            } else {
-                point = [end, point[1]];
-            }
+        }
+        case 38: { // 위
+            const newY = (y - 1 >= start) ? y - 1 : end;
+            if (data[newY][x] !== 1) point = [newY, x];
             break;
-        case 39 : // 오른쪽 이동
-            if(point[1] + 1 <= end) {
-                point = [point[0], point[1] + 1];
-            } else {
-                point = [point[0], start];
-            }
+        }
+        case 39: { // 오른쪽
+            const newX = (x + 1 <= end) ? x + 1 : start;
+            if (data[y][newX] !== 1) point = [y, newX];
             break;
-        case 40 : // 아래쪽 이동
-            if(point[0] + 1 <= end) {
-                point = [point[0] + 1, point[1]];
-            } else {
-                point = [start, point[1]];
-            }
+        }
+        case 40: { // 아래
+            const newY = (y + 1 <= end) ? y + 1 : start;
+            if (data[newY][x] !== 1) point = [newY, x];
             break;
+        }
     }
     // 이동한 화면 출력
     view();
