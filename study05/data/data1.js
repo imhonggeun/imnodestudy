@@ -10,4 +10,4 @@ const model = [
 //module.exports = model;
 
 // ES6 방식
-//export default model;
+export default model;
